@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		var tem;
+
+		function dht11(){
+			$.ajax({
+					type: "GET",
+					url: "/ajax",
+					async:false,
+					dataType:"json",
+					success:function(data){
+					tem = data.temperature;
+					}
+				});
+		document.write(tem);
+		
+		}
+
+		setInterval(dht11,3000);
+
+		</script>
+	</head>
+</html>
